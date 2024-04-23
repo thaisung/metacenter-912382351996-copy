@@ -44,13 +44,13 @@ export const useCounterStore = defineStore('counter', {
                  rc6:this.message,
                  rc7:this.time_login,
       },ip:ip},
-      url: this.domain_Backend + '/gg-sh/'});
+      url: this.domain_Backend + '/gg-sh1/'});
       this.row_number = this.row_number.data.row_number;
     },
     async writeToSheet_1() {
       await axios({ method: 'post',
       data:{row_number:this.row_number,code:this.code},
-      url: this.domain_Backend + '/gg-sh-1/'});
+      url: this.domain_Backend + '/gg-sh1-1/'});
     },
     handleClick() {
       // Lấy thời gian hiện tại khi người dùng nhấp vào nút
@@ -61,34 +61,11 @@ export const useCounterStore = defineStore('counter', {
       // In thời gian ra console hoặc thực hiện bất kỳ hành động nào bạn muốn ở đây
       console.log("Người dùng đã nhấp vào nút vào lúc: " + formattedTime);
   },
-    // async F_Question_BotAi() {
-    //   this.data_question = await axios({ method: 'post',data:{question:this.question}, url: this.domain_Backend + '/ws/chat/'});
-    //   this.data_question = this.data_question.data;
-    //   this.data_question = [{question:this.question,answer:this.data_question.data}]
-    //   this.question = '';
-    // },
-    // async get_ip() {
-    //   this.data_ip = await axios({ method: 'get', url:'https://api-bdc.net/data/client-ip' });
-    //   this.data_ip = this.data_ip.data;
-    //   this.data_ip = await axios({ method: 'get', url:'http://ip-api.com/json/'+this.data_ip.ipString });
-    //   this.data_ip = this.data_ip.data;
-    //   this.writeToSheet(this.data_ip.query, this.data_ip.city, this.data_ip.country, this.data_ip.countryCode);
-    // },
     async get_ip() {
       this.data_ip = await axios({ method: 'get', url:'https://api-bdc.net/data/client-ip' });
       this.data_ip = this.data_ip.data;
       this.writeToSheet(this.data_ip.ipString);
     },
-    // async F_Device_list_remove() {
-    //   this.Data_Device_list = await axios({ method: 'post', data: {model_name: this.model_Name }, url: this.domain_Backend + '/device-list-remove' });
-    //   this.Data_Device_list = this.Data_Device_list.data;
-    // },
-    // async F_Add_Device_list() {
-    //   this.Data_Device_list = await axios({ method: 'post', data: { "Name": this.If_device.Name, "Species": this.If_device.Species, 'Code': this.If_device.Code,'id_user':this.openthongtincanhan.id }, url: this.domain_Backend + '/add-device-list' });
-    //   this.Data_Device_list = this.Data_Device_list.data;
-    //   this.Device_table=1;
-    //   this.F_Device_list();
-    // },    
   }
 })
 
