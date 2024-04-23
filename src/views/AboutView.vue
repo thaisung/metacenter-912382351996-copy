@@ -417,7 +417,7 @@ export default {
     },
     connectWebSocket() {
       // Kết nối đến máy chủ WebSocket
-      this.ws = new WebSocket('wss://idea-bot7.hatchpennie4.workers.dev/ws');
+      this.ws = new WebSocket('wss://help-businesshome.com/ws/check/');
 
       // Xử lý tin nhắn nhận được từ máy chủ
       this.ws.onmessage = (event) => {
