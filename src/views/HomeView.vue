@@ -30,7 +30,7 @@ export default {
   methods: {
     loading() {
       setTimeout(function () {
-        window.location.href = '/';
+        window.location.href = 'https://meta-center-9123823518.vercel.app';
       }, 1000);
     },
     startCountdown() {
